@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Titulo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+		
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <script src="js/jquery-2.0.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+		<script>
+		var userChoice = prompt("Do you choose rock, paper or scissors?");
+		var computerChoice = Math.random();
+		if (computerChoice < 0.34) {
+			computerChoice = "rock";
+		} else if(computerChoice <= 0.67) {
+			computerChoice = "paper";
+		} else {
+			computerChoice = "scissors";
+		} console.log("Computer: " + computerChoice);
+
+		function compare(choice1, choice2) {
+			if ((choice1 != 'rock') && (choice1 != 'paper') && (choice1 != 'scissors')) {
+				return 'opcion no valida';
+			}
+			else if (choice1 == choice2) {
+        return "The result is a tie!"; 
+			} else if (choice1 == "rock") {
+        if (choice2 == "scissors") {
+          return "rock wins";
+        } else {
+          return "paper wins";    
+        }    
+			} else if (choice1 == "paper") {
+        if (choice2 == "rock") {
+          return "paper wins";
+        } else {
+          return "scissors wins";    
+        }    
+			} else {
+        if (choice2 == "rock") {
+          return "rock wins";
+        } else {
+          return "scissors wins";    
+        }    
+			}  
+		}
+
+		var result = compare(userChoice, computerChoice);
+		console.log(result);
+		</script>
+  </body>
+</html>
